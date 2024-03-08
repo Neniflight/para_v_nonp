@@ -1,11 +1,9 @@
 <script>
-  // Write your JS here, or import other files
+  import Graph from "./Graph.svelte"
 </script>
 
 <main>
-  <h1>Svelte template</h1>
-
-  <p>Write your HTML here</p>
+  <Graph/>
 </main>
 
 <style>

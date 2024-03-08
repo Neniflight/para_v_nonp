@@ -90,6 +90,8 @@
             .attr("fill", "none")
             .attr("stroke", "steelblue")
             .attr("stroke-width", 5)
+            .transition()
+            .duration(500)
             .attr("d", normalLine(xValues));
 
         const mle = calculateMLE(normalData);
@@ -103,6 +105,8 @@
             .style("stroke", "red")
             .attr("fill", "none")
             .attr("stroke-width", 1.5)
+            .transition()
+            .duration(500)
             .attr("d", mleLine);
     }
 
@@ -115,5 +119,6 @@
 <div>
     <h1>Normal Visualization</h1>
     <input type="range" name="mySlider" id="mySlider" min="10" max="2000" bind:value={n_samples}>
+    <span>{n_samples}</span>
     <svg id="chart"></svg>
 </div>

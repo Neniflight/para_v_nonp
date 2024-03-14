@@ -134,8 +134,7 @@
             .attr("stroke-width", 5)
             .attr("d", lineFunction(xValues))
             .transition()
-            .duration(500)
-            .attr("d", normalLine(xValues));
+            .duration(500);
 
         const mle = calculateNormalMLE(normalData);
         const mleLine = d3.line()

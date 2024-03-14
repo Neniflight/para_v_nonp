@@ -133,6 +133,9 @@
             .attr("stroke", "steelblue") // color for PDF
             .attr("stroke-width", 5)
             .attr("d", lineFunction(xValues));
+            .transition()
+            .duration(500)
+            .attr("d", normalLine(xValues));
 
         const mle = calculateNormalMLE(normalData);
         const mleLine = d3.line()
@@ -145,6 +148,8 @@
             .style("stroke", "red")
             .attr("fill", "none")
             .attr("stroke-width", 1.5)
+            .transition()
+            .duration(500)
             .attr("d", mleLine);
              // Add legend
     const legend = d3.select("#legend");

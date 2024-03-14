@@ -132,7 +132,7 @@
             .attr("fill", "none")
             .attr("stroke", "steelblue") // color for PDF
             .attr("stroke-width", 5)
-            .attr("d", lineFunction(xValues));
+            .attr("d", lineFunction(xValues))
             .transition()
             .duration(500)
             .attr("d", normalLine(xValues));

@@ -1,7 +1,6 @@
 <script>
     import { onMount } from 'svelte';
     import * as d3 from 'd3';
-
     let full_data = {};
     let data = [];
     let n_samples = 400;
@@ -191,17 +190,98 @@
 
 </script>
 
-<div>
-    <h1>{sampleType} Visualization</h1>
-    <input type="range" name="mySlider" id="mySlider" min="10" max="1000" bind:value={n_samples}>
-    <select bind:value={sampleType}>
-        <option value="Normal">Normal</option>
-        <option value="Exponential">Exponential</option>
-        <option value="Bimodal">Bimodal</option>
-    </select>
-    <svg id="chart"></svg>
-    <svg id="legend" width="200" height="100">
-        <!-- Legend content will be added here -->
-    </svg>
+<div class="graph-container">
+    <div class="visualization-container"> 
+        <h1>{sampleType} Visualization</h1>
+        <div>Number of Samples: {n_samples}</div>
+        <input type="range" name="mySlider" id="mySlider" min="10" max="1000" bind:value={n_samples}>
+        <div class="buttons-container">
+            <button on:click={() => sampleType = 'Normal'} class:selected={sampleType === 'Normal'}>Normal</button>
+            <button on:click={() => sampleType = 'Exponential'} class:selected={sampleType === 'Exponential'}>Exponential</button>
+            <button on:click={() => sampleType = 'Bimodal'} class:selected={sampleType === 'Bimodal'}>Bimodal</button>
+        </div>
+        <svg id="chart"></svg>
+        <svg id="legend" width="200" height="100">
+            <!-- Legend content will be added here -->
+        </svg>
+    </div>
+    <div class="annotation">
+        {#if sampleType === "Normal" & n_samples >= 10 & n_samples <= 200}
+            <p>Using parametric/MLE, it immediately fits quite well, while the histograms do not fit well to the population distribution at all</p>
+        {:else if sampleType === "Normal" & n_samples > 200 & n_samples <= 500}
+            <p>The MLE fits extremely well, while the histogram fits somewhat well</p>
+        {:else if sampleType === "Normal" & n_samples > 500}
+            <p>The histogram is starting to fit quite well, but we needed 500+ purchases. Notice that the MLE needed way less purchases to predict the population distribution</p>
+        {:else if sampleType === "Exponential" & n_samples >= 10 & n_samples <= 80}
+            <p>None of the estimators are fitting well! We need more samples!</p>
+        {:else if sampleType === "Exponential" & n_samples > 80 & n_samples <= 300}
+            <p>The histogram estimator is fitting somewhat well, while the MLE still does not fit well</p>
+        {:else if sampleType === "Exponential" & n_samples > 300}
+            <p>The histogram estimator now fits quite well, but the MLE only somewhat fits, even with many samples.</p>
+        {:else if sampleType ==="Bimodal" & n_samples >= 10 & n_samples < 100}
+            <p>None of them fit well. We need more samples.</p>
+        {:else if sampleType === "Bimodal" & n_samples >= 100 & n_samples < 300}
+            <p>The histogram estimator is fitting somewhat well, while the MLE still does not fit well. Notice that the variance is huge for the MLE is huge, so it does not fit</p>
+        {:else if sampleType ==="Bimodal" & n_samples>= 300} 
+            <p>The histogram fits very well! The extreme values of the bimodal are throwing off the MLE a lot, so it does not fit at all.  </p>
+        {/if}
+    </div>
 </div>
-<div>Number of Samples: {n_samples}</div>
+
+<style>
+    .graph-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .visualization-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+
+    .visualization-container input {
+        width: 50%;
+    }
+    
+    .annotation {
+        display: block;
+        width: 20%;
+        margin-top: 4rem;
+        text-align: left;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: white;
+        border-radius: 10px;
+        padding: 0.5rem;
+        height: 40%;
+    }
+
+    h1, input, p, button, div {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    button {
+        background-color: transparent;
+        border: 1px solid #65d4e7;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #f0f0f0;
+    }
+
+    button.selected {
+        background-color: #007bff;
+        color: white;
+    }
+</style>

@@ -1,6 +1,7 @@
 <script>
   import Graph from "./Graph.svelte"
   import Scroller from "@sveltejs/svelte-scroller";
+  import MLE_Vis from "./MLE_Vis.svelte"
   let count, index, offset, progress;
   let width, height;
   let isFirstIndex = false; 
@@ -120,6 +121,10 @@
       <p class="mystery">We have no idea, what kind of spending distribution this mystery person who just transferred banks is.</p>
       <p class="mystery">We only have a sample of his purchases and in order to get more, we have to use time/money to scrape his history.</p>
       <p class="mystery">What is the most optimal way to get this person's spending distribution and habits?</p>
+    </section>
+    <!-- parametric -->
+    <section>
+      <MLE_Vis/>
     </section>
     <section>
       <p>Let's say we have Person A. Person A's spending fits a normal distribution.</p>

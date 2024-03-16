@@ -89,7 +89,7 @@
         const mleLine = d3.line()
             .x(d => xScale(d))
             .y(d => yScale(normalPDF(d, meanValue, varianceValue)))
-
+        
         svg.append("path")
             .datum(xValues)
             .attr("class", "line")
@@ -120,7 +120,7 @@
         <div id="mle_vis"></div>
     </div>
 
-    <div>
+    <div class="stats-container">
         <h4>Best Mean So Far: {bestMean}</h4>
         <h4>Best Standard Deviation So Far: {bestVariance}</h4>
         <p>Likelihood of the Points: <b>{likelihoodValue.toFixed(2)}</b></p>
@@ -137,5 +137,11 @@
 
     .vis-container {
         display: flex;
+    }
+
+    .stats-container {
+        background-color: white;
+        padding: 0.5rem;
+        height: 60%;
     }
 </style>

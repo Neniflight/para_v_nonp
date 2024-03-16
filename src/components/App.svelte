@@ -59,6 +59,7 @@
     <!-- first section -->
     <section>
       <h1>Estimating Customer Spending with Parametric and Nonparametric Methods</h1>
+      <h2><a href="https://www.youtube.com/watch?v=DbPK3Ewc3Fo">Video for the Project!</a></h2>
     </section>
     <!-- second section -->
     <section>

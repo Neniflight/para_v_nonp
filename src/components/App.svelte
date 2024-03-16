@@ -13,7 +13,7 @@
   $: isThirdIndex = index === 2;
   $: isSeventhIndex = index === 6;
   $: isEighthIndex = index === 7;
-  $: isTenthIndex = index === 11;
+  $: isTenthIndex = index === 16;
 
 </script>
 
@@ -143,26 +143,84 @@
     </section>
     <!-- parametric -->
     <section>
+    </section>
+    <section>
       <p>Let's say we have Person A. Person A's spending fits a normal distribution.</p>
       <div class="img-container">
         <img class="img1" src="/images/normal_dist.png" alt="normal">
         <img class="img2" src="/images/questionmarkman.png" alt="normal">
       </div>   
       <p>But we do not know this. We only have a small sample of their spending. </p>
-      <p>Let's say we only have 10 recorded spendings</p>
-
+      <p>Let's say we only have 10 recorded spendings!</p>
+      <p>The first thing we may do is plot it out using a histogram</p>
     </section>
 
     <section>
-      <MLE_Vis/>
+      <h1>Nonparametric Estimator(Histogram)</h1>
+      <div>
+        <p>Histograms are an example of a <b>nonparametric</b> estimator because they do not take a <b>parameter</b> to make. To make a histogram, you just make bins and sort your data into them.</p>
+        <img class = "img1" src="/images/Histogram10.png" alt="hist10">
+        <p>This is our sample of 10 sorted into bins, as you can see it does not look like our distribution(notated by the red line). This means we should use something else.</p>
+        <p>So instead of raw plotting our data, we will try preprocessing it then plot it</p>
+      </div>
+      
     </section>
 
-    
+    <section>
+      <h1>Parametric Estimator(MLE)</h1>
+      <div>
+        <p>We will use a MLE(Maximum Likelihood Estimator) are an example of a <b>parametric</b> estimator. We will create an MLE of a normal curve, as it is the most common.</p>
+        <p>First we find the mean and the standard deviation of our data, then fit it to the normal distribution equation</p>
+        <img class =  "img1" src = "images/MLEfunctions.png"> 
+        <p>These functions above are the the most optimal way to find the best parameters given a sample of points</p>
+        <img class = "img1" src="/images/MLE10.png" alt="mle10">
+        <p>We applied this method to our sample of 10 and <b>WOW!</b> it fits almost perfectly!</p>
+        <p>So now we have the shape of Person A's distribution!</p>
+
+      </div>      
+    </section>
+
+    <section>
+      <p>In this visualization, try yourself to find the optimal parameters to fit the data below, <b>maximizing the likelihood</b> that the data can appear from our plot</p>
+      <MLE_Vis/>
+      <p>If you notice, moving the <b>mean</b> will slide our plot left and right, and moving the <b>variance</b> changes the width of our plot</p>
+    </section>
+
+
+    <section>
+      <h1>So why use nonparametric?</h1>
+      <div>
+        <p>Parametric requires you know the previous shape of the distribution. We got lucky that we chose the most common distribution and it happened to fit our person's distribution.</p>
+        <div class="img-container">
+          <img class="img3" src="/images/MLEexp.png" alt="normal">
+          <img class="img3" src="/images/MLEbi.png" alt="normal">
+        </div>
+        <p>If Person A was not a normal distribution, it would fit like these graphs above, for exponential and bimodal respectively. This is not a good estimate.</p>
+        <p>Nonparametric gets better with sample size:</p>
+        <div class="img-container">
+          <img class="img3" src="/images/Histogram500.png" alt="normal">
+          <p>In this example we have a sample of 500, and it does fit our distribution quite well.</p>
+        </div>  
+      </div>      
+    </section>
+
+    <section>
+      <h1>So why use nonparametric?</h1>
+      <div>
+        <p>In fact, with enough sample size, our <b>nonparametric approach can fit any distribution!</b></p>
+        <div class="img-container">
+          <img class="img3" src="/images/HISTbi.png" alt="normal">
+          <img class="img3" src="/images/HISTexp.png" alt="normal">
+        </div>
+        <p>So it is up to you to decide whether you have enough sample size to use a nonparametric approach, or a generalized parametric approach for predicting these distributions.</p>
+      </div>      
+    </section>
+
     <!-- visualization section -->
     <section>
-      <div class = "caption_text">Here we will sample people's incomes from different income distributions. The blue line represents what their true income distribution looks like.
-      The red line is if we assumed their income distribution to be normal. The histogram shows a nonparametric approach to guessing the distribution of this person's income.
-      </div>
+      <h1> YOU TRY! </h1>
+      <div class = "caption_text">Here we will sample people's incomes from different income distributions.</div>
+      <div class = "caption_text"> You can play with the sample size to see when the histogram approach fits better than our MLE approach</div>
       <Graph/> 
     </section>
     <!-- Takeaways -->
@@ -387,7 +445,12 @@
   .img2 {
     width: 20%;
   }
-
+  .img3 {
+    width: 40%;
+  }
+  .img3 {
+    width: 50%;
+  }
   .mystery {
     font-family: "Verdana";
     color: white!important;

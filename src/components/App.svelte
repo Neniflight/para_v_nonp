@@ -124,15 +124,20 @@
     </section>
     <!-- parametric -->
     <section>
-      <MLE_Vis/>
-    </section>
-    <section>
       <p>Let's say we have Person A. Person A's spending fits a normal distribution.</p>
       <div class="img-container">
         <img class="img1" src="/images/normal_dist.png" alt="normal">
         <img class="img2" src="/images/questionmarkman.png" alt="normal">
       </div>   
+      <p>But we do not know this. We only have a small sample of their spending. </p>
+      <p>Let's say we only have 10 recorded spendings</p>
+
     </section>
+
+    <section>
+      <MLE_Vis/>
+    </section>
+
     
     <!-- visualization section -->
     <section>

@@ -12,7 +12,8 @@
   $: isFirstIndex = index === 0;
   $: isThirdIndex = index === 2;
   $: isSeventhIndex = index === 6;
-  $: isTenthIndex = index === 10;
+  $: isEighthIndex = index === 7;
+  $: isTenthIndex = index === 11;
 
 </script>
 
@@ -30,6 +31,9 @@
     <div class="first-index-background" class:visible={isFirstIndex}></div>
     <div class="third-index-background" class:visible={isThirdIndex} ></div>
     <div class="seventh-index-background" class:visible={isSeventhIndex}></div>
+    <div class="eigth-index-background" class:visible={isEighthIndex}>
+      <h1 class="slide-in" class:visible={isEighthIndex} class:active={isEighthIndex}>Parametric vs Nonparametric Estimators</h1>
+    </div>
     <div class="tenth-index" class:visible={isTenthIndex}>
       <h1>Acknowledgements</h1>
       <div class="img-container">
@@ -137,6 +141,8 @@
     </section>
     <!-- parametric -->
     <section>
+    </section>
+    <section>
       <MLE_Vis/>
     </section>
     <section>
@@ -212,6 +218,31 @@
     transition: opacity 0.5s, visibility 0.5s;
   }
 
+  .eigth-index-background {
+    width: 100%;
+    height: 100vh; 
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    background-image: url('/images/para_v_nonp.png'); 
+    background-size: cover;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .slide-in {
+    opacity: 0; /* Start with 0 opacity */
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(100%); /* Start with element below its final position */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition properties */
+  }
+
+  .slide-in.active {
+  opacity: 1; 
+  transform: translate(-50%, -50%);
+}
+
   .tenth-index {
     position: absolute;
     left: 50%;
@@ -238,6 +269,11 @@
   }
 
   .seventh-index-background.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .eigth-index-background.visible {
     opacity: 1;
     visibility: visible;
   }

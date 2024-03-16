@@ -268,7 +268,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('images/bank.png'); 
+    background-image: url('bank.png'); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }
@@ -279,7 +279,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('images/types.png'); 
+    background-image: url('types.png'); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }
@@ -290,7 +290,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('/images/mystery_person.jpeg'); 
+    background-image: url('mystery_person.jpeg'); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }

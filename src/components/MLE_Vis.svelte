@@ -11,7 +11,7 @@
     let bestVariance
     let svg; 
     var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 700 - margin.left - margin.right,
+    width = 600 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
     function normalPDF(x, mean, sd) {
@@ -137,11 +137,12 @@
 
     .vis-container {
         display: flex;
+        width:100%;
     }
 
     .stats-container {
         background-color: white;
-        padding: 0.5rem;
-        height: 60%;
+        padding: 0.3rem;
+        height: 100%;
     }
 </style>

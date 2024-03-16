@@ -13,7 +13,7 @@
   $: isThirdIndex = index === 2;
   $: isSeventhIndex = index === 6;
   $: isEighthIndex = index === 7;
-  $: isTenthIndex = index === 16;
+  $: isTenthIndex = index === 17;
 
 </script>
 
@@ -47,13 +47,13 @@
         </div>
       </div>
     </div>
-    <div class="progress-bars">
+    <!-- <div class="progress-bars">
       <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress value={count ? (index + 1) / count : 0} />
 
       <p>total progress</p>
       <progress value={progress || 0} />
-    </div>
+    </div> -->
   </div>
   <div class="foreground" slot="foreground">
     <!-- first section -->
@@ -223,6 +223,9 @@
       <div class = "caption_text"> You can play with the sample size to see when the histogram approach fits better than our MLE approach</div>
       <Graph/> 
     </section>
+    <section>
+
+    </section>
     <!-- Takeaways -->
     <section>
       <h1>Takeaways</h1>
@@ -246,7 +249,7 @@
     height: 100vh;
     position: relative;
     background-color: #B7D3F5;
-    outline: green solid 3px;
+    /* outline: green solid 3px; */
     overflow: hidden; /* Ensure background image doesn't overflow */
 
   }
@@ -307,7 +310,7 @@
     top: 10%;
     left: 50%;
     transform: translateX(100%); /* Start with element below its final position */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition properties */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transition properties */
   }
 
   .slide-in.active {
@@ -366,9 +369,9 @@
   section {
     height: 80vh;
     /* color: white; */
-    outline: rgb(130, 196, 234) solid 3px;
+    /* outline: rgb(130, 196, 234) solid 3px; */
     text-align: center;
-    max-width: 900px; /* adjust at will */
+    max-width: 100%; /* adjust at will */
     color: black;
     padding: 1em;
     margin: 0 0 2em 0;

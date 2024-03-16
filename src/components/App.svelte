@@ -7,11 +7,12 @@
   let isFirstIndex = false; 
   let isThirdIndex = false;
   let isSeventhIndex = false;
+  let isTenthIndex = false;
 
   $: isFirstIndex = index === 0;
   $: isThirdIndex = index === 2;
   $: isSeventhIndex = index === 6;
-
+  $: isTenthIndex = index === 10;
 
 </script>
 
@@ -29,6 +30,19 @@
     <div class="first-index-background" class:visible={isFirstIndex}></div>
     <div class="third-index-background" class:visible={isThirdIndex} ></div>
     <div class="seventh-index-background" class:visible={isSeventhIndex}></div>
+    <div class="tenth-index" class:visible={isTenthIndex}>
+      <h1>Acknowledgements</h1>
+      <div class="img-container">
+        <div>
+          <h2>Justin Eldridge</h2>
+          <img class="potrait" src="/images/justin.png" alt="justin">
+        </div>
+        <div>
+          <h2>Sam Lau</h2>
+          <img class="potrait" src="/images/sam.png" alt="sam">
+        </div>
+      </div>
+    </div>
     <div class="progress-bars">
       <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress value={count ? (index + 1) / count : 0} />
@@ -45,6 +59,7 @@
     <!-- second section -->
     <section>
       <h1>Why do we want to know a customer's distribution of spending?</h1>
+      <p>Hover over the buttons after thinking about it!</p>
       <div class="dropdown-container">
       <div class="dropdown">
         <button class="dropbtn">Recommendations</button>
@@ -90,7 +105,7 @@
     <!-- fourth section -->
     <section>
       <h1>Types of Customer Spending</h1>
-      <p>Each person has a unique way or distribution for spending their money. For instance, a typical person could spend consistently $50-60 on a daily basis. This is represented by a normal distribution.</p>
+      <p>These factors produce a spending distribution! Each person has a unique way or distribution for spending their money. For instance, a typical person could spend consistently $50-60 on a daily basis. This is represented by a normal distribution.</p>
       <h2>Normal Distribution</h2>
       <div class="img-container">
         <img class="img1" src="/images/normal_dist.png" alt="normal">
@@ -129,6 +144,17 @@
       The red line is if we assumed their income distribution to be normal. The histogram shows a nonparametric approach to guessing the distribution of this person's income.
       </div>
       <Graph/> 
+    </section>
+    <!-- Takeaways -->
+    <section>
+      <h1>Takeaways</h1>
+      <p>There are <b>tradeoffs</b> between parametric and nonparametric estimators</p>
+      <p>If we have pre-existing information about the distribution. Parametric requires much less samples! However if we do not have any info, then we have a very high error rate. <b>↑ chance of error, ↓ cost.</b></p>
+      <p>Nonparametric will always eventually capture the true distribution, but it requires many more points. <b>↑accuracy, ↑cost</b>.</p>
+      <p>This visualization allows you to visually see these differences and directly compare between parametric and nonparametric for different types of customers. Typically, these concepts are introduced separately, so this visualization allows for better comparisons and tradeoffs. </p>
+    </section>
+    <section>
+
     </section>
   </div>
 
@@ -184,6 +210,21 @@
     background-image: url('/images/mystery_person.jpeg'); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .tenth-index {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .tenth-index.visible {
+    opacity: 1;
+    visibility: visible;
   }
 
   .first-index-background.visible {
@@ -301,6 +342,11 @@
   .mystery {
     font-family: "Verdana";
     color: white!important;
+  }
+
+  .potrait {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
 </style>

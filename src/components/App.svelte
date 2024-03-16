@@ -117,8 +117,19 @@
     <!-- seventh section -->
     <section>
       <h1 class="mystery">INTRODUCING A NEW MYSTERY PERSON</h1>
-      <p class="mystery">We have no idea, what kind of spending distribution this mystery person who just transferred banks is. We only have a sample of his purchases and in order to get more, we have to use time/money to scrape his history. What is the most optimal way to get this person's spending distribution and habits?</p>
+      <p class="mystery">We have no idea, what kind of spending distribution this mystery person who just transferred banks is.</p>
+      <p class="mystery">We only have a sample of his purchases and in order to get more, we have to use time/money to scrape his history.</p>
+      <p class="mystery">What is the most optimal way to get this person's spending distribution and habits?</p>
     </section>
+    <section>
+      <p>Let's say we have Person A. Person A's spending fits a normal distribution.</p>
+      <div class="img-container">
+        <img class="img1" src="/images/normal_dist.png" alt="normal">
+        <img class="img2" src="/images/questionmarkman.png" alt="normal">
+      </div>   
+    </section>
+    
+    <!-- visualization section -->
     <section>
       <div class = "caption_text">Here we will sample people's incomes from different income distributions. The blue line represents what their true income distribution looks like.
       The red line is if we assumed their income distribution to be normal. The histogram shows a nonparametric approach to guessing the distribution of this person's income.
@@ -201,7 +212,6 @@
     margin: 0 auto;
     height: auto;
     position: relative;
-    outline: red solid 3px;
   }
 
   .progress-bars {
@@ -213,7 +223,7 @@
   section {
     height: 80vh;
     /* color: white; */
-    outline: magenta solid 3px;
+    outline: rgb(130, 196, 234) solid 3px;
     text-align: center;
     max-width: 900px; /* adjust at will */
     color: black;

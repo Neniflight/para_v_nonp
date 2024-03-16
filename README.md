@@ -5,5 +5,5 @@ In this project, we try to explain and visualize what parametric and nonparametr
 ---
 
 Authors for this Repo:
-**Calvin Nguyen**: [Github](https://github.com/Neniflight), [Linkedin](https://www.linkedin.com/in/calvin-nguyen-1089b51a1/)
-**Kevin Chan**: [Github](), [Linkedin]()
+* **Calvin Nguyen**: [Github](https://github.com/Neniflight), [Linkedin](https://www.linkedin.com/in/calvin-nguyen-1089b51a1/)
+* **Kevin Chan**: [Github](), [Linkedin]()

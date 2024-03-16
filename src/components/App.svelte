@@ -2,6 +2,7 @@
   import Graph from "./Graph.svelte"
   import Scroller from "@sveltejs/svelte-scroller";
   import MLE_Vis from "./MLE_Vis.svelte"
+  import { base } from '$app/paths';
   let count, index, offset, progress;
   let width, height;
   let isFirstIndex = false; 
@@ -39,11 +40,11 @@
       <div class="img-container">
         <div>
           <h2>Justin Eldridge</h2>
-          <img class="potrait" src="/images/justin.png" alt="justin">
+          <img class="potrait" src="{base}/images/justin.png" alt="justin">
         </div>
         <div>
           <h2>Sam Lau</h2>
-          <img class="potrait" src="/images/sam.png" alt="sam">
+          <img class="potrait" src="{base}/images/sam.png" alt="sam">
         </div>
       </div>
     </div>
@@ -113,8 +114,8 @@
       <p>These factors produce a spending distribution! Each person has a unique way or distribution for spending their money. For instance, a typical person could spend consistently $50-60 on a daily basis. This is represented by a normal distribution.</p>
       <h2>Normal Distribution</h2>
       <div class="img-container">
-        <img class="img1" src="/images/normal_dist.png" alt="normal">
-        <img class="img2" src="/images/normal_man.png" alt="normal">
+        <img class="img1" src="{base}/images/normal_dist.png" alt="normal">
+        <img class="img2" src="{base}/images/normal_man.png" alt="normal">
       </div>      
     </section>
     <!-- fifth section -->
@@ -122,8 +123,8 @@
       <p>Another person doesn't have much money to spend. Therefore, they make frequent, small purchases very often and never make big purchases. This is represented by an exponential distribution.</p>
       <h2>Exponential Distribution</h2>
       <div class="img-container">
-        <img class="img1" src="/images/expon_dist.png" alt="expon">
-        <img class="img2" src="/images/poor_person.png" alt="poor">
+        <img class="img1" src="{base}/images/expon_dist.png" alt="expon">
+        <img class="img2" src="{base}/images/poor_person.png" alt="poor">
       </div>
     </section>
     <!-- sixth section -->
@@ -131,8 +132,8 @@
       <p>This last person has a lot of money to spend. Sometimes they make big purchases and sometimes they make smaller purchases! This is modeled best by a bimodal distribution</p>
       <h2>Bimodal Distribution</h2>
       <div class="img-container">
-        <img class="img1" src="/images/bimodal_dist.png" alt="bimodal">
-        <img class="img2" src="/images/rich_man.png" alt="rich">
+        <img class="img1" src="{base}/images/bimodal_dist.png" alt="bimodal">
+        <img class="img2" src="{base}/images/rich_man.png" alt="rich">
       </div>
     </section>
     <!-- seventh section -->
@@ -148,8 +149,8 @@
     <section>
       <p>Let's say we have Person A. Person A's spending fits a normal distribution.</p>
       <div class="img-container">
-        <img class="img1" src="/images/normal_dist.png" alt="normal">
-        <img class="img2" src="/images/questionmarkman.png" alt="normal">
+        <img class="img1" src="{base}/images/normal_dist.png" alt="normal">
+        <img class="img2" src="{base}/images/questionmarkman.png" alt="normal">
       </div>   
       <p>But we do not know this. We only have a small sample of their spending. </p>
       <p>Let's say we only have 10 recorded spendings!</p>
@@ -160,7 +161,7 @@
       <h1>Nonparametric Estimator(Histogram)</h1>
       <div>
         <p>Histograms are an example of a <b>nonparametric</b> estimator because they do not take a <b>parameter</b> to make. To make a histogram, you just make bins and sort your data into them.</p>
-        <img class = "img1" src="/images/Histogram10.png" alt="hist10">
+        <img class = "img1" src="{base}/images/Histogram10.png" alt="hist10">
         <p>This is our sample of 10 sorted into bins, as you can see it does not look like our distribution(notated by the red line). This means we should use something else.</p>
         <p>So instead of raw plotting our data, we will try preprocessing it then plot it</p>
       </div>
@@ -172,9 +173,9 @@
       <div>
         <p>We will use a MLE(Maximum Likelihood Estimator) are an example of a <b>parametric</b> estimator. We will create an MLE of a normal curve, as it is the most common.</p>
         <p>First we find the mean and the standard deviation of our data, then fit it to the normal distribution equation</p>
-        <img class =  "img1" src = "images/MLEfunctions.png"> 
+        <img class =  "img1" src = "{base}images/MLEfunctions.png"> 
         <p>These functions above are the the most optimal way to find the best parameters given a sample of points</p>
-        <img class = "img1" src="/images/MLE10.png" alt="mle10">
+        <img class = "img1" src="{base}/images/MLE10.png" alt="mle10">
         <p>We applied this method to our sample of 10 and <b>WOW!</b> it fits almost perfectly!</p>
         <p>So now we have the shape of Person A's distribution!</p>
 
@@ -193,13 +194,13 @@
       <div>
         <p>Parametric requires you know the previous shape of the distribution. We got lucky that we chose the most common distribution and it happened to fit our person's distribution.</p>
         <div class="img-container">
-          <img class="img3" src="/images/MLEexp.png" alt="normal">
-          <img class="img3" src="/images/MLEbi.png" alt="normal">
+          <img class="img3" src="{base}/images/MLEexp.png" alt="normal">
+          <img class="img3" src="{base}/images/MLEbi.png" alt="normal">
         </div>
         <p>If Person A was not a normal distribution, it would fit like these graphs above, for exponential and bimodal respectively. This is not a good estimate.</p>
         <p>Nonparametric gets better with sample size:</p>
         <div class="img-container">
-          <img class="img3" src="/images/Histogram500.png" alt="normal">
+          <img class="img3" src="{base}/images/Histogram500.png" alt="normal">
           <p>In this example we have a sample of 500, and it does fit our distribution quite well.</p>
         </div>  
       </div>      
@@ -210,8 +211,8 @@
       <div>
         <p>In fact, with enough sample size, our <b>nonparametric approach can fit any distribution!</b></p>
         <div class="img-container">
-          <img class="img3" src="/images/HISTbi.png" alt="normal">
-          <img class="img3" src="/images/HISTexp.png" alt="normal">
+          <img class="img3" src="{base}/images/HISTbi.png" alt="normal">
+          <img class="img3" src="{base}/images/HISTexp.png" alt="normal">
         </div>
         <p>So it is up to you to decide whether you have enough sample size to use a nonparametric approach, or a generalized parametric approach for predicting these distributions.</p>
       </div>      

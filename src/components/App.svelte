@@ -190,6 +190,7 @@
 
 
     <section>
+      <p></p>
       <h1>So why use nonparametric?</h1>
       <div>
         <p>Parametric requires you know the previous shape of the distribution. We got lucky that we chose the most common distribution and it happened to fit our person's distribution.</p>
@@ -268,7 +269,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url("bank.png"); 
+    background-image: url("/images/bank.png"); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }
@@ -279,7 +280,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('types.png'); 
+    background-image: url('/images/types.png'); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }
@@ -290,7 +291,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('mystery_person.jpeg'); 
+    background-image: url('/images/mystery_person.jpeg'); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }

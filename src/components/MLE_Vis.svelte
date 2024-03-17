@@ -131,7 +131,7 @@
 </div>
 
 <style>
-    h2, h3,  h4, input, p {
+    h3,  h4, input, p {
         font-family: 'Verdana'
     }
 

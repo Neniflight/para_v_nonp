@@ -10,8 +10,6 @@
   let isSeventhIndex = false;
   let isTenthIndex = false;
 
-  let bank_background = {base} + "/bank.png"
-
   $: isFirstIndex = index === 0;
   $: isThirdIndex = index === 2;
   $: isSeventhIndex = index === 6;
@@ -270,7 +268,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url(bank_background); 
+    background-image: url("bank.png"); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }
@@ -362,12 +360,6 @@
     margin: 0 auto;
     height: auto;
     position: relative;
-  }
-
-  .progress-bars {
-    position: absolute;
-    background: rgba(170, 51, 120, 0.2) /*  40% opaque */;
-    visibility: visible;
   }
 
   section {

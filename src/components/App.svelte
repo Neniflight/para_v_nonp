@@ -10,6 +10,8 @@
   let isSeventhIndex = false;
   let isTenthIndex = false;
 
+  let bank_background = {base} + "/bank.png"
+
   $: isFirstIndex = index === 0;
   $: isThirdIndex = index === 2;
   $: isSeventhIndex = index === 6;
@@ -173,7 +175,7 @@
       <div>
         <p>We will use a MLE(Maximum Likelihood Estimator) are an example of a <b>parametric</b> estimator. We will create an MLE of a normal curve, as it is the most common.</p>
         <p>First we find the mean and the standard deviation of our data, then fit it to the normal distribution equation</p>
-        <img class =  "img1" src = "{base}images/MLEfunctions.png"> 
+        <img alt="img1" class =  "img1" src = "{base}/images/MLEfunctions.png"> 
         <p>These functions above are the the most optimal way to find the best parameters given a sample of points</p>
         <img class = "img1" src="{base}/images/MLE10.png" alt="mle10">
         <p>We applied this method to our sample of 10 and <b>WOW!</b> it fits almost perfectly!</p>
@@ -268,7 +270,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('bank.png'); 
+    background-image: url(bank_background); 
     background-size: cover;
     transition: opacity 0.5s, visibility 0.5s;
   }
